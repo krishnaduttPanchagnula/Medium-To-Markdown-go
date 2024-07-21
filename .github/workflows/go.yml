@@ -21,7 +21,7 @@ jobs:
         run: go mod download
 
       - name: Build and test
-        run: go build -o mtm cli/cli.go
+        run: go build -o mtm ./cli/cli.go
         env:
           GOOS: linux
           GOARCH: amd64
