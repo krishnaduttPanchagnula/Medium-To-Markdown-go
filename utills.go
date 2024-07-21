@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// markDownClean cleans the Markdown text by removing the share and follow sections.
 func markDownClean(filebody string) string {
 	var shareFound bool
 	var result strings.Builder
@@ -32,6 +33,7 @@ func markDownClean(filebody string) string {
 	return result.String()
 }
 
+// CurlFromURL gets the HTML content from a URL using the http package.
 func CurlFromURL(url string) []byte {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
@@ -51,6 +53,7 @@ func CurlFromURL(url string) []byte {
 	return bodyText
 }
 
+// saveInFile saves a byte slice to a file.
 func saveInFile(filebody []byte, filename string) error {
 	err := os.WriteFile(filename, filebody, os.ModeAppend.Perm())
 	if err != nil {
