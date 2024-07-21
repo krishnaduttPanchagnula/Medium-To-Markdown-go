@@ -25,11 +25,3 @@ jobs:
         env:
           GOOS: linux
           GOARCH: amd64
-
-      - name: Publish to GitHub Packages
-        uses: github/codeql-action/publish@v3
-        with:
-          package-name: krishnaduttPanchagnula/medium-to-markdown-go
-          package-version: ${{ github.sha }}
-          package-architecture: linux-amd64
-          package-os: linux
