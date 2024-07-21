@@ -21,7 +21,7 @@ import (
 )
 
 func main() {
-	err := mtm.MediumToMarkdown("https://medium.com/@krishnaduttpanchagnula/from-scratch-to-brew-creating-personalized-formulae-using-tfblueprintgen-in-homebrew-b5e745b6551d", "test.md")
+	err := mtm.MediumToMarkdown("<YOUR_URL>", "test.md")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -29,4 +29,7 @@ func main() {
 ```
 
 ## CLI
- 
+If you are not interested in writing go code and just want to convert the files using our CLI tool
+```bash
+medium-markdown --url <YOUR_URL> --filename test.md
+```
